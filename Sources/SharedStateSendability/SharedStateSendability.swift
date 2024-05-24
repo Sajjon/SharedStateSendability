@@ -7,7 +7,6 @@ extension PersistenceKeyDefault<DummyKey<Bool>> {
 	)
 }
 
-
 public struct DummyKey<Value>: Hashable, PersistenceReaderKey, Sendable {
 	public func load(initialValue: Value?) -> Value? {
 		initialValue
