@@ -3,6 +3,10 @@
 
 import PackageDescription
 
+let swiftSettings: [SwiftSetting] = [
+	.enableExperimentalFeature("StrictConcurrency")
+]
+
 let package = Package(
     name: "SharedStateSendability",
     products: [
@@ -15,7 +19,9 @@ let package = Package(
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "SharedStateSendability"),
+			name: "SharedStateSendability",
+			swiftSettings: swiftSettings
+		),
         .testTarget(
             name: "SharedStateSendabilityTests",
             dependencies: ["SharedStateSendability"]),
